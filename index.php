@@ -72,7 +72,7 @@
                 style="font-size:15pt; text-transform: uppercase;"><strong><?php echo $row['kota']; ?></strong></a>
             <hr>
          -->
-        <a href="login/" class="btn btn-outline-light" style="font-size:15pt;"> LOGIN
+        <a href="login/login.php" class="btn btn-outline-light" style="font-size:15pt;"> LOGIN
     </div>
     <div class="footer bg-transparent text-center mb-3 ">
         <span class="text-light"><strong>Copyright &copy; 2023 <a href="#"

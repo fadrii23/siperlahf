@@ -2,7 +2,7 @@
 	$host 		= "localhost";
 	$username 	= "root";
 	$password 	= "";
-	$db_name 	= "siperlah_db";
+	$db_name 	= "contoh";
 
 	$connect = mysqli_connect($host,$username,$password,$db_name);
 

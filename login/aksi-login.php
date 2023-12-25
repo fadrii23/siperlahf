@@ -1,29 +1,31 @@
 <?php
 	session_start();
-	include ('../config/koneksi.php');	
+	require ('../config/koneksi.php');	
 
 	$username 	= $_POST['username'];
-	$password 	= md5($_POST['password']);
+	$password 	= $_POST['password'];
 	
-	$qLogin 	= mysqli_query($connect, "SELECT * FROM login WHERE username='$username' AND password='$password'");
+	$qLogin 	= mysqli_query($connect, "SELECT * FROM tb_user WHERE username='$username' AND password='$password'");
 	$row 		= mysqli_num_rows($qLogin);
+	
 	
 	if($row > 0){
 		$login = mysqli_fetch_assoc($qLogin);
-		if($login['level']=="admin"){
+		if($login['role']=="admin"){
 			$_SESSION['username'] = $username;
-			$_SESSION['lvl'] = "Administrator";
+			// $_SESSION['lvl'] = "Administrator";
 
 			header("location:../admin/");
-		}else if($login['level']=="kades"){
-			$_SESSION['username'] = $username;
-			$_SESSION['lvl'] = "Kepala Desa";
 
-			header("location:../admin/");
-		}else{
-			header("location:index.php?pesan=login-gagal");
-		}	
+		} else if ($login['role']=="user"){
+			$_SESSION['username'] = $username;
+			// $_SESSION['lvl'] = "Fadri Tri Hartanto";
+
+			echo " ini bagianmu";
+			// header("location:../admin/");
+		
 	}else{
-		header("location:index.php?pesan=login-gagal");
+		echo "gaagl masuk lagi";
 	}
+}
 ?>
