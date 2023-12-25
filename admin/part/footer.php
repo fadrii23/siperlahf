@@ -1,11 +1,11 @@
 <footer class="main-footer">
-    <strong>Copyright &copy; 2019 <a href="../../" style="text-decoration:none">e-SuratDesa</a>.</strong> All rights
+    <strong>Copyright &copy; 2023 <a href="../../" style="text-decoration:none">SIPERLAH</a>.</strong> All rights
     reserved.
 </footer>
 <script src="../../assets/AdminLTE/bower_components/jquery/dist/jquery.min.js"></script>
 <script src="../../assets/AdminLTE/bower_components/jquery-ui/jquery-ui.min.js"></script>
 <script>
-  	$.widget.bridge('uibutton', $.ui.button);
+$.widget.bridge('uibutton', $.ui.button);
 </script>
 <!-- Bootstrap 3.3.7 -->
 <script src="../../assets/AdminLTE/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -40,9 +40,10 @@
 <script src="../../assets/datatables-1.10.12/js/jquery.dataTables.min.js"></script>
 <script src="../../assets/datatables-1.10.12/js/dataTables.bootstrap.min.js"></script>
 <script>
-    $(document).ready(function(){
-        $('#data-table').DataTable();
-    });
+$(document).ready(function() {
+    $('#data-table').DataTable();
+});
 </script>
 </body>
+
 </html>

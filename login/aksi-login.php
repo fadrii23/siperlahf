@@ -15,7 +15,7 @@
 			$_SESSION['username'] = $username;
 			// $_SESSION['lvl'] = "Administrator";
 
-			header("location:../admin/");
+			header("location:../admin/dashboard/dashboard.php");
 
 		} else if ($login['role']=="user"){
 			$_SESSION['username'] = $username;
