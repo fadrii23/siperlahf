@@ -1,42 +1,54 @@
+<!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="../../assets/img/mini-logo.png">
-	<title>e-SuratDesa</title>
-	<link rel="stylesheet" href="../../assets/fontawesome-5.10.2/css/all.css">
-	<link rel="stylesheet" href="../../assets/bootstrap-4.3.1/dist/css/bootstrap.min.css">
-</head>
-<body class="bg-light">
- 	<navbar class="navbar navbar-expand-lg navbar-dark bg-info">
-   	<a class="navbar-brand ml-4 mt-1" href="../../"><img src="../../assets/img/e-SuratDesa.png"></a>
-   	<button class="navbar-toggler mr-4 mt-3" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-   		<span class="navbar-toggler-icon"></span>
-   	</button>
-   	<div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-   		<ul class="navbar-nav ml-auto mt-lg-3 mr-5 position-relative text-right">
-     		<li class="nav-item">
-     			<a class="nav-link" href="../../">HOME</a>
-     		</li>
-     		<li class="nav-item active">
-     			<a class="nav-link" href="#"><i class="fas fa-envelope"></i>&nbsp;BUAT SURAT</a>
-     		</li>
-     		<li class="nav-item">
-     			<a class="nav-link" href="../../tentang/">TENTANG <b>e-SuratDesa</b></a>
-     		</li>
-    		<li class="nav-item active ml-5">
-          <?php
-            session_start();
 
-            if(empty($_SESSION['username'])){
-                echo '<a class="btn btn-light text-info" href="../../login/"><i class="fas fa-sign-in-alt"></i>&nbsp;LOGIN</a>';
-            }else if(isset($_SESSION['lvl'])){
-              echo '<a class="btn btn-transparent text-light" href="../../admin/"><i class="fa fa-user-cog"></i> '; echo $_SESSION['lvl']; echo '</a>';
-              echo '<a class="btn btn-transparent text-light" href="../../login/logout.php"><i class="fas fa-power-off"></i></a>';
-            }
-          ?>
-        </li>
-   		</ul>
-   	</div>
- 	</navbar>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="shortcut icon" href="../../assets/img/mini-logo.png">
+    <title>ADMIN | SIPERLAH</title>
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap 3.3.7 -->
+    <link rel="stylesheet" href="../../assets/AdminLTE/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../../assets/AdminLTE/bower_components/font-awesome/css/font-awesome.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="../../assets/AdminLTE/bower_components/Ionicons/css/ionicons.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="../../assets/AdminLTE/dist/css/AdminLTE.min.css">
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+    folder instead of downloading all of them to reduce the load. -->
+    <link rel="stylesheet" href="../../assets/AdminLTE/dist/css/skins/_all-skins.min.css">
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link rel="stylesheet" href="../../assets/AdminLTE/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css">
+    <!-- Font Awesome v5.8.2 -->
+    <link rel="stylesheet" href="../../assets/fontawesome-5.10.2/css/all.css">
+    <!-- CSS DataTable -->
+    <link rel="stylesheet" href="../../assets/datatables-1.10.12/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../assets/datatables-1.10.12/css/dataTables.bootstrap.min.css" />
+</head>
+
+<body class="hold-transition skin-blue sidebar-mini">
+    <div class="wrapper">
+        <header class="main-header">
+            <a href="../dashboard/dashboard.php" class="logo" style="text-decoration:none; padding-top:5px;">
+                <h4><b>SIPERLAH</b></h4>
+                <!-- <span class="logo-mini"><img src="../../assets/img/mini-logo.png"></span>
+                <span class="logo-lg"><img src="../../assets/img/e-SuratDesa-mini.png"></span> -->
+            </a>
+            <nav class="navbar navbar-static-top">
+                <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                    <span class="sr-only">Toggle navigation</span>
+                </a>
+                <div class="navbar-custom-menu">
+                    <ul class="nav navbar-nav">
+                        <li class="user user-menu">
+                            <a href="../../login/logout.php">
+                                <i class="fas fa-sign-out-alt"></i><span class="hidden-xs"> Logout</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
