@@ -22,13 +22,20 @@
         </div>
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li>
-                <a href="../dashboard/">
-                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Dashboard</span>
+            <li class="add">
+                <a href="../../surat/mail.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Buat Surat</span>
                 </a>
             </li>
             <li class="active">
-                <a href="#"><i class="fa fa-users"></i> <span>Data Guru</span></a>
+                <a href="../dashboard/dashboard.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Dashboard</span>
+                </a>
+            </li>
+            <li class="teacher">
+                <a href="../guru/guru.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Data Guru</span>
+                </a>
             </li>
             <?php
         if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Administrator')){

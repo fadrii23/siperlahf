@@ -2,9 +2,9 @@
 	session_start();
  
 	if(isset($_SESSION['admin'])){
-		header('location:../admin/dashboard/');
-	}else if(isset($_SESSION['kades'])){
-		header('location:../admin/dashboard/');
+		header('location:../admin/dahsboard/dashboard.php');
+	}else if(isset($_SESSION['user'])){
+		echo"ini user";
 	}
 ?>
 

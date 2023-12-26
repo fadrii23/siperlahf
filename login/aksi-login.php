@@ -13,13 +13,13 @@
 		$login = mysqli_fetch_assoc($qLogin);
 		if($login['role']=="admin"){
 			$_SESSION['username'] = $username;
-			// $_SESSION['lvl'] = "Administrator";
+			$_SESSION['lvl'] = "Administrator";
 
-			header("location:../admin/dashboard/dashboard.php");
+			header("Location: ../admin/dashboard/dashboard.php");
 
 		} else if ($login['role']=="user"){
 			$_SESSION['username'] = $username;
-			// $_SESSION['lvl'] = "Fadri Tri Hartanto";
+			$_SESSION['lvl'] = "user";
 
 			echo " ini bagianmu";
 			// header("location:../admin/");

@@ -88,17 +88,17 @@
                             <?php
                 include ('../../config/koneksi.php');
 
-                $qTampil = mysqli_query($connect, "SELECT * FROM penduduk");
-                $jumlahPenduduk = mysqli_num_rows($qTampil);
-                echo $jumlahPenduduk;
+                $qTampil = mysqli_query($connect, "SELECT * FROM tb_guru");
+                $jumlahGuru = mysqli_num_rows($qTampil);
+                echo $jumlahGuru;
               ?>
                         </h3>
-                        <p>Data Penduduk</p>
+                        <p>Data Guru</p>
                     </div>
                     <div class="icon">
                         <i class="fas fa-users" style="font-size:70px"></i>
                     </div>
-                    <a href="../penduduk/" class="small-box-footer">Lihat detail <i
+                    <a href="../guru/guru.php" class="small-box-footer">Lihat detail <i
                             class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>

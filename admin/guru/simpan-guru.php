@@ -2,41 +2,43 @@
     include ('../../config/koneksi.php');
 
     if (isset($_POST['submit'])){
-        $nim = $_POST['fnip'];
-        $name = $_POST['fnama'];
+        $nip = $_POST['fnip'];
+        $name = $_POST['fname'];
         $place = $_POST['fplace'];
         $date_birth = $_POST['fdate_birth'];
-        $gender = $_POST['fgender'];
-        $agama = $_POST['fagama'];
-        $jalan = addslashes($_POST['fjalan']);
-        $dusun = $_POST['fdusun'];
-        $rt = $_POST['frt'];
-        $rw = $_POST['frw'];
-        $desa = $_POST['fdesa'];
-        $kecamatan = $_POST['fkecamatan'];
-        $kota = "Kabupaten " . $_POST['fkota'];
-        $no_kk = $_POST['fno_kk'];
-        $pend_kk = $_POST['fpend_kk'];
-        $pend_terakhir = $_POST['fpend_terakhir'];
-        $pend_ditempuh = $_POST['fpend_ditempuh'];
-        $pekerjaan = $_POST['fpekerjaan'];
-        $status_perkawinan = $_POST['fstatus_perkawinan'];
-        $status_dlm_keluarga = $_POST['fstatus_dlm_keluarga'];
-        $kewarganegaraan = $_POST['fkewarganegaraan'];
-        $nama_ayah = $_POST['fnama_ayah'];
-        $nama_ibu = $_POST['fnama_ibu'];
+        $gender= $_POST['fgender'];
+        $address = $_POST['faddress'];
+        $religion = $_POST['freligion'];
+        $position = $_POST['fposition'];
+        $education = $_POST['feducation'];
+        $email = $_POST['femail'];
+        $mapel = $_POST['fmapel'];
+        $status = $_POST['fstatus'];
+        $join_date = $_POST['fjoin_date'];
+        $photo = $_POST['fphoto'];
 
-        $qCekGuru = mysqli_query($connect, "SELECT * FROM tb_guru WHERE nip='$nip'");
-        $row          = mysqli_num_rows($qCekGuru);
+        $randomFilename = time().'-'.md5(rand()).'-'.$photo;
+        $uploadPath = $_SERVER['DOCUMENT_ROOT'].'/upload/'.$randomFilename;
 
-        if($row > 0){
+        if($uploadPath) {
+            mysqli_query($connect,"INSERT INTO tb_guru (nip,name,place,date_birth,gender,address,religion,position,education,email,mapel,status,join_date,photo)
+                        VALUES ('$nip','$name','$place','$date_birth','$gender','$address','$religion','$position','$education','$email','$mapel','$status','$join_date','/upload/$randomFilename')");
+            header("Location:guru.php");
+        } else {
             header('location:index.php?pesan=gagal-menambah');
-        }else{
-            $qTambahGuru = "INSERT INTO tb_guru VALUES(NULL, '$nik', '$nama', '$tempat_lahir', '$tgl_lahir', '$jenis_kelamin', '$agama', '$jalan', '$dusun', '$rt', '$rw', '$desa', '$kecamatan', '$kota', '$no_kk', '$pend_kk', '$pend_terakhir', '$pend_ditempuh', '$pekerjaan', '$status_perkawinan', '$status_dlm_keluarga', '$kewarganegaraan', '$nama_ayah', '$nama_ibu')";
-            $tambahGuru = mysqli_query($connect, $qTambahGuru);
-            if($tambahGuru){
-                header("location:index.php");
-            }
         }
+
+        // $qCekGuru = mysqli_query($connect, "SELECT * FROM tb_guru WHERE nip='$nip'");
+        // $row          = mysqli_num_rows($qCekGuru);
+
+        // if($row > 0){
+        //     header('location:index.php?pesan=gagal-menambah');
+        // }else{
+        //     $qTambahGuru = "INSERT INTO tb_guru VALUES(NULL, '$nip', '$name', '$place', '$date_birth', '$address', '$religion', '$position', '$education', '$email', '$mapel', '$status', '$join_date', '$randomFilename')";
+        //     $tambahGuru = mysqli_query($connect, $qTambahGuru);
+        //     if($tambahGuru){
+        //         header("location:index.php");
+        //     }
+        // }
     }
 ?>

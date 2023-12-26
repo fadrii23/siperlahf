@@ -23,14 +23,19 @@
         </div>
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li>
-                <a href="../dashboard/">
-                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Dashboard</span>
+            <li class="add">
+                <a href="../../surat/mail.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Buat Surat</span>
                 </a>
             </li>
             <li class="active">
-                <a href="../penduduk/">
-                    <i class="fa fa-users"></i><span>&nbsp;Data Guru</span>
+                <a href="../dashboard/dashboard.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Dashboard</span>
+                </a>
+            </li>
+            <li class="teacher">
+                <a href="../guru/guru.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Data Guru</span>
                 </a>
             </li>
             <li class="treeview">
@@ -93,15 +98,15 @@
                     </div>
                     <div class="box-body">
                         <div class="row">
-                            <form class="form-horizontal" method="post" action="simpan-penduduk.php">
+                            <form class="form-horizontal" method="post" action="../guru/simpan-guru.php">
                                 <div class="col-md-6">
                                     <div class="box-body">
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">NIP</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fnik" maxlength="16"
+                                                <input type="text" name="fnip" maxlength="16"
                                                     onkeypress="return hanyaAngka(event)" class="form-control"
-                                                    placeholder="NIK" required>
+                                                    placeholder="NIP" required>
                                                 <script>
                                                 function hanyaAngka(evt) {
                                                     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -115,14 +120,14 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Nama</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fnama" class="form-control"
+                                                <input type="text" name="fname" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Nama" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Tempat Lahir</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="ftempat_lahir" class="form-control"
+                                                <input type="text" name="fplace" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Tempat Lahir"
                                                     required>
                                             </div>
@@ -130,13 +135,13 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Tanggal Lahir</label>
                                             <div class="col-sm-8">
-                                                <input type="date" name="ftgl_lahir" class="form-control" required>
+                                                <input type="date" name="fdate_birth" class="form-control" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Jenis Kelamin</label>
                                             <div class="col-sm-8">
-                                                <select name="fjenis_kelamin" class="form-control" required>
+                                                <select name="fgender" class="form-control" required>
                                                     <option value="">-- Jenis Kelamin --</option>
                                                     <option value="Laki-laki">Laki-laki</option>
                                                     <option value="Perempuan">Perempuan</option>
@@ -146,14 +151,14 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Alamat</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fagama" class="form-control"
+                                                <input type="text" name="faddress" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Alamat" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Agama</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fagama" class="form-control"
+                                                <input type="text" name="freligion" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Agama" required>
                                             </div>
                                         </div>
@@ -231,8 +236,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Jabatan</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fno_kk" maxlength="16"
-                                                    onkeypress="return hanyaAngka(event)" class="form-control"
+                                                <input type="text" name="fposition" class="form-control"
                                                     placeholder="Jabatan" required>
                                             </div>
                                         </div>
@@ -240,7 +244,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Pendidikan Terakhir</label>
                                             <div class="col-sm-8">
-                                                <select name="fpend_kk" class="form-control" required>
+                                                <select name="feducation" class="form-control" required>
                                                     <option value="">-- Pendidikan Terakhir --</option>
                                                     <option value="SD/SEDERAJAT">SD/SEDERAJAT</option>
                                                     <option value="SLTP/SEDERAJAT">SLTP/SEDERAJAT</option>
@@ -259,14 +263,14 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Email</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fpekerjaan" class="form-control"
+                                                <input type="text" name="femail" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Email" required>
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Mata Pelajaran</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fpekerjaan" class="form-control"
+                                                <input type="text" name="fmapel" class="form-control"
                                                     style="text-transform: capitalize;"
                                                     placeholder="Mata Pelajaran yg Diampu" required>
                                             </div>
@@ -274,7 +278,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Status</label>
                                             <div class="col-sm-8">
-                                                <select name="fstatus_perkawinan" class="form-control" required>
+                                                <select name="fstatus" class="form-control" required>
                                                     <option value="">-- Status --</option>
                                                     <option value="PNS">PNS</option>
                                                     <option value="Non PNS">NON PNS</option>
@@ -284,7 +288,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Tanggal Bergabung</label>
                                             <div class="col-sm-8">
-                                                <input type="date" name="ftgl_lahir" class="form-control" required>
+                                                <input type="date" name="fjoin_date" class="form-control" required>
                                             </div>
                                         </div>
                                         <!-- <div class="form-group">
@@ -308,7 +312,7 @@
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Foto Terkini</label>
                                             <div class="col-sm-8">
-                                                <input type="text" name="fnama_ibu" class="form-control"
+                                                <input type="file" name="fphoto" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Foto Terkini"
                                                     required>
                                             </div>
