@@ -27,18 +27,5 @@
         } else {
             header('location:index.php?pesan=gagal-menambah');
         }
-
-        // $qCekGuru = mysqli_query($connect, "SELECT * FROM tb_guru WHERE nip='$nip'");
-        // $row          = mysqli_num_rows($qCekGuru);
-
-        // if($row > 0){
-        //     header('location:index.php?pesan=gagal-menambah');
-        // }else{
-        //     $qTambahGuru = "INSERT INTO tb_guru VALUES(NULL, '$nip', '$name', '$place', '$date_birth', '$address', '$religion', '$position', '$education', '$email', '$mapel', '$status', '$join_date', '$randomFilename')";
-        //     $tambahGuru = mysqli_query($connect, $qTambahGuru);
-        //     if($tambahGuru){
-        //         header("location:index.php");
-        //     }
-        // }
     }
 ?>

@@ -37,11 +37,18 @@ $.widget.bridge('uibutton', $.ui.button);
 <!-- AdminLTE for demo purposes -->
 <script src="../../assets/AdminLTE/dist/js/demo.js"></script>
 <!-- DataTable Plugin -->
-<script src="../../assets/datatables-1.10.12/js/jquery.dataTables.min.js"></script>
-<script src="../../assets/datatables-1.10.12/js/dataTables.bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+<script
+    src="https://cdn.datatables.net/v/bs/jszip-3.10.1/dt-1.13.8/b-2.4.2/b-html5-2.4.2/b-print-2.4.2/fh-3.4.0/r-2.5.0/datatables.min.js">
+</script>
+
+<!-- <script src="../../assets/datatables-1.10.12/js/dataTables.bootstrap.min.js"></script> -->
 <script>
 $(document).ready(function() {
-    $('#data-table').DataTable();
+    $('#data-table').DataTable({
+        responsive: true
+    });
 });
 </script>
 </body>

@@ -36,7 +36,7 @@
                         <a class="nav-link" href="#"><i class="fas fa-home"></i>&nbsp;HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="tentang/">TENTANG <b>e-SuratDesa</b></a>
+                        <a class="nav-link" href="tentang/tentang.php">TENTANG <b>SIPERLAH</b></a>
                     </li>
                     <!-- 
                     <li class="nav-item active ml-5">
@@ -72,11 +72,14 @@
                 style="font-size:15pt; text-transform: uppercase;"><strong><?php echo $row['kota']; ?></strong></a>
             <hr>
          -->
-        <a href="login/login.php" class="btn btn-outline-light" style="font-size:15pt;"> LOGIN
+        <br>
+        <a href="login/login.php" class="btn btn-outline-light"
+            style="font-size:15pt; background-color:blue; color:black"> LOGIN
+        </a>
     </div>
     <div class="footer bg-transparent text-center mb-3 ">
         <span class="text-light"><strong>Copyright &copy; 2023 <a href="#"
-                    class="text-decoration-none text-white">SIPERLAH</a>.</strong> All rights reserved.</span>
+                    class="text-decoration-none text-white">SIPERLAH.</strong> All rights reserved.</span>
     </div>
 </body>
 

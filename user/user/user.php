@@ -1,11 +1,11 @@
 <?php
-  include ('../part/akses.php');
-	include ('../part/header.php');
+  include ('../../admin/part/akses.php');
+	include ('../../admin/part/header.php');
 ?>
 
 <aside class="main-sidebar">
     <?php
-    include ('../part/sidebar.php')
+    include ('../../admin/part/sidebar.php')
     ?>
 </aside>
 <div class="content-wrapper">
@@ -46,7 +46,17 @@
                     <div class="inner">
                         <h3>
                             <?php
-                $qTampil = mysqli_query($connect, "SELECT * FROM tb_surat WHERE status_surat='pending'");
+                // $qTampil = mysqli_query($connect, "SELECT tanggal_surat FROM surat_keterangan WHERE status_surat='pending' 
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_berkelakuan_baik WHERE status_surat='pending' 
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_domisili WHERE status_surat='pending'
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_kepemilikan_kendaraan_bermotor WHERE status_surat='pending'
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_perhiasan WHERE status_surat='pending'
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_usaha WHERE status_surat='pending'
+                //   UNION SELECT tanggal_surat FROM surat_lapor_hajatan WHERE status_surat='pending'
+                //   UNION SELECT tanggal_surat FROM surat_pengantar_skck WHERE status_surat='pending'");
+                // $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
+                // echo $jumlahPermintaanSurat;
+                $qTampil = mysqli_query($connect, "SELECT created_date_sudin FROM tb_sudin WHERE status_sudin='pending'");
                 $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
                 echo $jumlahPermintaanSurat;
               ?>
@@ -65,7 +75,17 @@
                     <div class="inner">
                         <h3>
                             <?php
-                $qTampil = mysqli_query($connect, "SELECT no_surat FROM tb_surat WHERE status_surat='done'");
+                // $qTampil = mysqli_query($connect, "SELECT tanggal_surat FROM surat_keterangan WHERE status_surat='selesai' 
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_berkelakuan_baik WHERE status_surat='selesai' 
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_domisili WHERE status_surat='selesai'
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_kepemilikan_kendaraan_bermotor WHERE status_surat='selesai'
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_perhiasan WHERE status_surat='selesai'
+                //   UNION SELECT tanggal_surat FROM surat_keterangan_usaha WHERE status_surat='selesai'
+                //   UNION SELECT tanggal_surat FROM surat_lapor_hajatan WHERE status_surat='selesai'
+                //   UNION SELECT tanggal_surat FROM surat_pengantar_skck WHERE status_surat='selesai'");
+                // $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
+                // echo $jumlahPermintaanSurat;
+                $qTampil = mysqli_query($connect, "SELECT created_date_sudin FROM tb_sudin WHERE status_sudin='pending'");
                 $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
                 echo $jumlahPermintaanSurat;
               ?>
@@ -75,12 +95,12 @@
                     <div class="icon">
                         <i class="fas fa-envelope" style="font-size:70px"></i>
                     </div>
-                    <a href="../surat/selesai.php" class="small-box-footer">Lihat detail <i
+                    <a href="../surat/surat_selesai/selesai.php" class="small-box-footer">Lihat detail <i
                             class="fa fa-arrow-circle-right"></i></a>
                 </div>
             </div>
             <?php 
-        } else if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'user')){
+        } else if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Kepala Desa')){
       ?>
             <div class="col-lg-1"></div>
             <div class="col-lg-5 col-xs-6">
@@ -147,6 +167,16 @@
                                     <div class="col-md-4" style="text-align: center;">
                                         <img style="max-width:300px; width:100%; height:auto;"
                                             src="../../assets/img/logo_sekolah.png"><br>
+                                        <?php  
+                    //   $qTampilDesa = mysqli_query($connect, "SELECT * FROM profil_desa WHERE id_profil_desa = '1'");
+                    //   foreach($qTampilDesa as $row){
+                    // ?>
+                                        <!-- <p style="font-size: 20pt; font-weight: 500; text-transform: uppercase;">
+                                            <strong>DESA <?php echo $row['nama_desa']; ?></strong>
+                                            <hr> -->
+                                        <?php  
+                    //   }
+                    ?>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="pull-right">
@@ -181,7 +211,8 @@
                       ?>
                                         </div><br>
                                         <div style="font-size: 35pt; font-weight: 500;">
-                                            <p>Halo, <strong><?php echo $_SESSION['lvl']; ?></strong>
+                                            <p>Halo,
+                                                <strong><?php echo $_SESSION['lvl']; ?></strong>
                                         </div>
                                         <div style="font-size: 15pt; font-weight: 500;">
                                             <p>Selamat datang di <a href="#" style="text-decoration:none"><strong>Web
@@ -201,5 +232,5 @@
 </div>
 
 <?php 
-  include ('../part/footer.php');
+  include ('../../admin/part/footer.php');
 ?>

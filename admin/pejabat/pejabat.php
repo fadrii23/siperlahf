@@ -10,10 +10,10 @@
 </aside>
 <div class="content-wrapper">
     <section class="content-header">
-        <h1>Data Guru</h1>
+        <h1>Data Pejabat</h1>
         <ol class="breadcrumb">
             <li><a href="../dashboard/"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
-            <li class="active">Data Guru</li>
+            <li class="active">Data Pejabat</li>
         </ol>
     </section>
     <section class="content">
@@ -34,10 +34,12 @@
                 <?php 
           if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Administrator')){
         ?>
-                <a class="btn btn-success btn-md" href='../guru/tambah-guru.php'><i class="fa fa-user-plus"></i> Tambah
+                <a class="btn btn-success btn-md" href='../pejabat/tambah-pejabat.php'><i class="fa fa-user-plus"></i>
+                    Tambah
                     Data
-                    Guru</a>
-                <a target="_blank" class="btn btn-info btn-md" href='export-guru.php'><i class="fas fa-file-export"></i>
+                    Pejabat</a>
+                <a target="_blank" class="btn btn-info btn-md" href='../pejabat/export-pejabat.php'><i
+                        class="fas fa-file-export"></i>
                     Export .XLS</a>
                 <?php 
           } else {
@@ -55,14 +57,7 @@
                                             <th><strong>NIP</strong></th>
                                             <th><strong>Nama</strong></th>
                                             <th><strong>Jabatan</strong></th>
-                                            <th><strong>Tempat / Tgl Lahir</strong></th>
-                                            <th><strong>Jenis Kelamin</strong></th>
-                                            <th><strong>Agama</strong></th>
-                                            <th><strong>Alamat</strong></th>
-                                            <th><strong>Email</strong></th>
-                                            <th><strong>Mapel</strong></th>
-                                            <th><strong>Pendidikan</strong></th>
-                                            <th><strong>Status</strong></th>
+                                            <th><strong>Awal Menjabat</strong></th>
                                             <th><strong>Foto</strong></th>
                                             <?php 
                 if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Administrator')){
@@ -80,20 +75,20 @@
               include ('../../config/koneksi.php');
   
               $no = 1;
-              $qTampil = mysqli_query($connect, "SELECT * FROM tb_guru");
+              $qTampil = mysqli_query($connect, "SELECT * FROM tb_pejabat");
               
               foreach($qTampil as $row){
-                $tanggal = $row['date_birth'];
+                $tanggal = $row['awal_menjabat'];
             ?>
                                         <tr>
                                             <td><?php echo $no++; ?></td>
                                             <td><?php echo $row['nip']; ?></td>
-                                            <td style=" text-transform: capitalize;"><?php echo $row['name']; ?></td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['position']; ?></td>
+                                            <td style=" text-transform: capitalize;"><?php echo $row['nama']; ?></td>
+                                            <td style="text-transform: capitalize;"><?php echo $row['jabatan']; ?></td>
                                             <?php
-                $tanggal = date('d', strtotime($row['date_birth']));
-                $bulan = date('F', strtotime($row['date_birth']));
-                $tahun = date('Y', strtotime($row['date_birth']));
+                $tanggal = date('d', strtotime($row['awal_menjabat']));
+                $bulan = date('F', strtotime($row['awal_menjabat']));
+                $tahun = date('Y', strtotime($row['awal_menjabat']));
                 $bulanIndo = array(
                     'January' => 'Januari',
                     'February' => 'Februari',
@@ -110,27 +105,18 @@
                 );
               ?>
                                             <td style="text-transform: capitalize;">
-                                                <?php echo $row['place'] . ", " . $tanggal . " " . $bulanIndo[$bulan] . " " . $tahun; ?>
-                                            </td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['gender']; ?></td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['religion']; ?></td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['address']; ?></td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['email']; ?></td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['mapel']; ?></td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['education']; ?>
-                                            </td>
-                                            <td style="text-transform: capitalize;"><?php echo $row['status']; ?></td>
-                                            <td><a href="<?=$row['photo'];?>" target="_blank">unduh</a></td>
+                                                <?php echo  "" . $tanggal . " " . $bulanIndo[$bulan] . " " . $tahun; ?>
+                                            <td><a href="<?=$row['foto'];?>" target="_blank">unduh</a></td>
 
                                             <?php 
                 if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Administrator')){
               ?>
                                             <td>
                                                 <a class="btn btn-success btn-sm"
-                                                    href='edit-guru.php?id=<?php echo $row['id_guru']; ?>'><i
+                                                    href='edit-pejabat.php?id=<?php echo $row['id_pejabat']; ?>'><i
                                                         class="fa fa-edit"></i></a>
                                                 <a class="btn btn-danger btn-sm"
-                                                    href='hapus-guru.php?id=<?php echo $row['id_guru']; ?>'
+                                                    href='hapus-pejabat.php?id=<?php echo $row['id_pejabat'];?>'
                                                     onclick="return confirm('Apakah Anda yakin ingin menghapus data ini?')"><i
                                                         class="fa fa-trash"></i></a>
                                             </td>

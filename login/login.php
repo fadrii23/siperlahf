@@ -60,7 +60,7 @@
 
                 </div>
                 <p class="small mb-0" style="color: white; text-align: center; ">Don't have
-                    account? <a href="register.php">Create
+                    account? <a href="../user/register/register.php">Create
                         an account</a></p>
             </div>
 

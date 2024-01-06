@@ -15,7 +15,7 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #f6f9ff;
+  background-image: url("../img/background.jpg");
   color: #444444;
 }
 

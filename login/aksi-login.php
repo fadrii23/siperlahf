@@ -3,7 +3,7 @@
 	require ('../config/koneksi.php');	
 
 	$username 	= $_POST['username'];
-	$password 	= $_POST['password'];
+	$password = md5($_POST['password']);
 	
 	$qLogin 	= mysqli_query($connect, "SELECT * FROM tb_user WHERE username='$username' AND password='$password'");
 	$row 		= mysqli_num_rows($qLogin);
@@ -19,13 +19,13 @@
 
 		} else if ($login['role']=="user"){
 			$_SESSION['username'] = $username;
-			$_SESSION['lvl'] = "user";
-
-			echo " ini bagianmu";
+			$_SESSION['lvl'] = 'user';
+			
+			header("Location: ../user/user/user.php");
 			// header("location:../admin/");
 		
 	}else{
-		echo "gaagl masuk lagi";
+		echo "gagal masuk lagi";
 	}
 }
 ?>
