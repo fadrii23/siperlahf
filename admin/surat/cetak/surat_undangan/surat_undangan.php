@@ -1,6 +1,8 @@
 <?php 
 	include ('../../../part/akses.php');
   	include ('../../../../config/koneksi.php');
+      $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+      $connect = $dbConnection->getConnection();
 
   	$id = $_GET['id'];
   	$id = $_GET['id'];

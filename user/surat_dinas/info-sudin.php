@@ -2,7 +2,8 @@
 	include ('../../config/koneksi.php');
 	include ('../../admin/part/akses.php');
 	include ('../../admin/part/header.php');
-		 
+    $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+    $connect = $dbConnection->getConnection();
 	$nip = $_POST['fnip'];
 	 
 	$qCekNip = mysqli_query($connect,"SELECT * FROM tb_guru WHERE nip = '$nip'");

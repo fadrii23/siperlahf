@@ -2,9 +2,11 @@
   include ('../../../../part/akses.php');
   include ('../../../../../config/koneksi.php');
   include ('../part/header.php');
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 
   $id = $_GET['id'];
-  $qCek = mysqli_query($connect,"SELECT tb_guru.*, tb_surat.* FROM tb_guru LEFT JOIN tb_surat ON tb_surat.nip = tb_guru.nip WHERE tb_surat.id_surat='$id'");
+  $qCek = mysqli_query($connect,"SELECT tb_pejabat.*, tb_surat.*, tb_ FROM tb_pejabat LEFT JOIN tb_surat ON tb_surat.nip = tb_pejabat.nip WHERE tb_surat.id_surat='$id'");
   while($row = mysqli_fetch_array($qCek)){
 ?>
 
@@ -48,18 +50,19 @@
                                                     </option>
                                                     <?php
                             $selectedPosition  = $row['position'];
-                            $qTampilPosition   = "SELECT * FROM tb_guru";
+                            $qTampilPosition   = "SELECT * FROM tb_pejabat";
                             $tampilPosition  = mysqli_query($connect, $qTampilPosition);
                             while($rows = mysqli_fetch_assoc($tampilPosition) ){
                               if($rows['position'] == $selectedPosition){
                           ?>
-                                                    <option value="<?php echo $rows['id_guru']; ?>" selected="selected">
+                                                    <option value="<?php echo $rows['id_pejabat']; ?>"
+                                                        selected="selected">
                                                         <?php echo $rows['position']; ?></option>
                                                     <?php
                               }else{
                           ?>
-                                                    <option value="<?php echo $rows['id_guru']; ?>">
-                                                        <?php echo $rows['position'], " (", $rows['name'], ")"; ?>
+                                                    <option value="<?php echo $rows['id_pejabat']; ?>">
+                                                        <?php echo $rows['position'], " (", $rows['nama'], ")"; ?>
                                                     </option>
 
                                                     <?php 

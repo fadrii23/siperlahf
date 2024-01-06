@@ -2,6 +2,8 @@
   include ('../part/akses.php');
   include ('../part/header.php');
   include ('../../config/koneksi.php');
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 ?>
 
 <aside class="main-sidebar">

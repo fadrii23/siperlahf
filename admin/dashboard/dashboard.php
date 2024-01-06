@@ -1,6 +1,10 @@
 <?php
-  include ('../part/akses.php');
-	include ('../part/header.php');
+    include ('../part/akses.php');
+    include ('../part/header.php');
+    include ('../../config/koneksi.php');
+   
+$dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 ?>
 
 <aside class="main-sidebar">
@@ -8,6 +12,7 @@
     include ('../part/sidebar.php')
     ?>
 </aside>
+
 <div class="content-wrapper">
     <section class="content-header">
         <h1>Dashboard</h1>
@@ -25,8 +30,7 @@
                     <div class="inner">
                         <h3>
                             <?php
-                include ('../../config/koneksi.php');
-
+               
                 $qTampil = mysqli_query($connect, "SELECT * FROM tb_guru");
                 $jumlahGuru = mysqli_num_rows($qTampil);
                 echo $jumlahGuru;
@@ -42,10 +46,31 @@
                 </div>
             </div>
             <div class="col-lg-4 col-xs-6">
+                <div class="small-box bg-red">
+                    <div class="inner">
+                        <h3>
+                            <?php
+               
+                $qTampil = mysqli_query($connect, "SELECT * FROM tb_pejabat");
+                $jumlahGuru = mysqli_num_rows($qTampil);
+                echo $jumlahGuru;
+              ?>
+                        </h3>
+                        <p>Data Pejabat</p>
+                    </div>
+                    <div class="icon">
+                        <i class="fas fa-users" style="font-size:70px"></i>
+                    </div>
+                    <a href="../pejabat/pejabat.php" class="small-box-footer">Lihat detail <i
+                            class="fa fa-arrow-circle-right"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4 col-xs-6">
                 <div class="small-box bg-green">
                     <div class="inner">
                         <h3>
                             <?php
+
                 $qTampil = mysqli_query($connect, "SELECT * FROM tb_surat WHERE status_surat='pending'");
                 $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
                 echo $jumlahPermintaanSurat;
@@ -65,6 +90,7 @@
                     <div class="inner">
                         <h3>
                             <?php
+
                 $qTampil = mysqli_query($connect, "SELECT no_surat FROM tb_surat WHERE status_surat='done'");
                 $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
                 echo $jumlahPermintaanSurat;

@@ -2,6 +2,8 @@
   include ('../part/akses.php');
   include ('../../config/koneksi.php');
   include ('../part/header.php');
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 
   $id = $_GET['id'];
   $qCek = mysqli_query($connect,"SELECT * FROM tb_guru WHERE id_guru='$id'");

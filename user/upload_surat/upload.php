@@ -116,5 +116,5 @@
 </div>
 
 <?php 
-  include ('../part/footer.php');
+  include ('../../admin/part/footer.php');
 ?>

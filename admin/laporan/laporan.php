@@ -2,6 +2,8 @@
   include ('../../config/koneksi.php');
   include ('../part/akses.php');
   include ('../part/header.php');
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 ?>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
@@ -224,13 +226,14 @@ $(window).load(function() {
                     </thead>
                     <tbody>
                         <?php
+                        $no=1;
               $sql = mysqli_query($connect, $query);
               $row = mysqli_num_rows($sql);
               if($row > 0){
                 while($data = mysqli_fetch_array($sql)){
             ?>
                         <tr>
-                            <td><?php echo $data['no_surat'];?></td>
+                            <td><?php echo $no++;?></td>
                             <?php
                       $tgl_lhr = date($data['created_date_surat']);
                       $tgl = date('d ', strtotime($tgl_lhr));

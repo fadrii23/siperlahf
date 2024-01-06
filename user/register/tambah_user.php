@@ -1,37 +1,32 @@
 <?php
 
-require '../config/koneksi.php';
+require '../../config/koneksi.php';
 
-// if(isset($_POST['submit'])) {
-    // global $db_connect;
-
-    $name = $_POST['name'];
-    $username = $_POST['username'];
-    $password = md5($_POST['password']);
-    $email = $_POST['email'];
-
-    // $image = $_FILES['image']['name'];
-    // $tempImage = $_FILES['image']['tmp_name'];
-    // $randomFilename = time().'-'.md5(rand()).'-'.$image;
-    // $uploadPath = $_SERVER['DOCUMENT_ROOT'];
-    //$upload = move_uploaded_file($tempImage,$uploadPath);
-
-    $sql = "INSERT INTO tb_user (name,username,password,email) VALUES ('$name', '$username', '$password', '$email')";
-
-    if (mysqli_query($connect, $sql)) {
-        header ("location:login.php") ;
-    } else {
-        echo "gagal upload lagi";
+class UserInsert extends DatabaseConnection {
+    public function __construct($host, $username, $password, $db_name) {
+        parent::__construct($host, $username, $password, $db_name);
     }
-    
-    // if($uploadPath) {
-        // mysqli_query($db_connect,"INSERT * INTO tb_user (name,username,password,email)");
-        // echo "Berhasil Diupload";
-    // } else {
-        // echo "gagal upload";
-    // }
 
-// } else {
-    // var_dump(" gagal upload") ;
+    public function insertUser($name, $username, $password, $email) {
+        $password = md5($password);
+        $sql = "INSERT INTO tb_user (name, username, password, email) VALUES ('$name', '$username', '$password', '$email')";
 
-// }
+        if (mysqli_query($this->getConnection(), $sql)) {
+            header("location:../../login/login.php");
+        } else {
+            echo "gagal upload lagi";
+        }
+    }
+}
+
+// Usage
+$database = new UserInsert("localhost", "root", "", "siperlah_db");
+
+$name = $_POST['name'];
+$username = $_POST['username'];
+$password = $_POST['password'];
+$email = $_POST['email'];
+
+$userInsert = new UserInsert($database->host, $database->username, $database->password, $database->db_name);
+$userInsert->insertUser($name, $username, $password, $email);
+?>

@@ -1,6 +1,8 @@
 <?php 
 	include ('../../../part/akses.php');
   	include ('../../../../config/koneksi.php');
+      $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+      $connect = $dbConnection->getConnection();
 
   	$id = $_GET['id'];
   	$id = $_GET['id'];
@@ -136,7 +138,7 @@
                 </tr>
                 <tr>
                     <td class="indentasi">
-                        Hari / Tanggal :
+                        Hari / Tanggal : <?php echo $row['created_date_surat']?>
                     </td>
                 </tr>
                 <tr>

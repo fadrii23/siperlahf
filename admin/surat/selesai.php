@@ -1,6 +1,10 @@
 <?php
   include ('../part/akses.php');
   include ('../part/header.php');
+  include('../../config/koneksi.php');
+
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 ?>
 
 <aside class="main-sidebar">
@@ -78,7 +82,7 @@
                     cellspacing="0">
                     <thead>
                         <tr>
-                            <th><strong>No. Surat</strong></th>
+                            <th><strong>No</strong></th>
                             <th><strong>NIP</strong></th>
                             <th><strong>Nama</strong></th>
                             <th><strong>Jenis Surat</strong></th>
@@ -90,7 +94,6 @@
                     </thead>
                     <tbody>
                         <?php
-              include ('../../config/koneksi.php');
 
               $no = 1;
                  $qTampil = mysqli_query($connect, "SELECT tb_surat.nama, tb_surat.id_surat, tb_surat.no_surat , tb_surat.nip , tb_surat.jenis_surat , tb_surat.status_surat , tb_surat.keperluan_surat, tb_surat.created_date_surat FROM tb_surat WHERE tb_surat.status_surat='done' ");
@@ -118,7 +121,7 @@
                 );
               ?>
 
-                            <td><?php echo $row['no_surat']; ?></td>
+                            <td><?php echo $no++; ?></td>
                             <td><?php echo $row['nip']; ?></td>
                             <td style="text-transform: capitalize;"><?php echo $row['nama']; ?></td>
                             <td><?php echo $row['jenis_surat']; ?></td>

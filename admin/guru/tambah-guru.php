@@ -2,6 +2,8 @@
   include ('../part/akses.php');
   include ('../part/header.php');
   include ('../../config/koneksi.php');
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 ?>
 
 <aside class="main-sidebar">
@@ -106,73 +108,6 @@
                                                     style="text-transform: capitalize;" placeholder="Agama" required>
                                             </div>
                                         </div>
-
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">Jalan</label>
-                      <div class="col-sm-8">
-                        <input type="text" name="fjalan" class="form-control" style="text-transform: capitalize;" placeholder="Jalan" required>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">Dusun</label>
-                      <div class="col-sm-8">
-                        <select name="fdusun" class="form-control" style="text-transform: capitalize;" required>
-                          <option value="">-- Dusun --</option>
-                          <?php
-                            // $qTampilDusun = "SELECT * FROM dusun";
-                            // $tampilDusun = mysqli_query($connect, $qTampilDusun);
-                            // while($rows = mysqli_fetch_assoc($tampilDusun)){
-                          ?>
-                          <option value="<?php echo $rows['nama_dusun']; ?>"><?php echo $rows['nama_dusun']; ?></option>
-                          <?php 
-                            // }
-                          ?>
-                        </select>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">RT</label>
-                      <div class="col-sm-8">
-                        <select name="frt" class="form-control" required>
-                          <option value="">-- RT --</option>
-                          <option value="001">001</option>
-                          <option value="002">002</option>
-                          <option value="003">003</option>
-                          <option value="004">004</option>
-                          <option value="005">005</option>
-                          <option value="006">006</option>
-                        </select>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">RW</label>
-                      <div class="col-sm-8">
-                        <select name="frw" class="form-control" required>
-                          <option value="">-- RW --</option>
-                          <option value="001">001</option>
-                          <option value="002">002</option>
-                          <option value="003">003</option>
-                        </select>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">Desa</label>
-                      <div class="col-sm-8">
-                        <input type="text" name="fdesa" class="form-control" style="text-transform: capitalize;" placeholder="Desa" required>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">Kecamatan</label>
-                      <div class="col-sm-8">
-                        <input type="text" name="fkecamatan" class="form-control" style="text-transform: capitalize;" placeholder="Kecamatan" required>
-                      </div>
-                    </div> -->
-                                        <!-- <div class="form-group">
-                      <label class="col-sm-4 control-label">Kota</label>
-                      <div class="col-sm-8">
-                        <input type="text" name="fkota" class="form-control" style="text-transform: capitalize;" placeholder="Kota" required>
-                      </div>
-                    </div> -->
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -235,24 +170,6 @@
                                                 <input type="date" name="fjoin_date" class="form-control" required>
                                             </div>
                                         </div>
-                                        <!-- <div class="form-group">
-                                            <label class="col-sm-4 control-label">Kewarganegaraan</label>
-                                            <div class="col-sm-8">
-                                                <select name="fkewarganegaraan" class="form-control" required>
-                                                    <option value="">-- Kewarganegaraan --</option>
-                                                    <option value="WNI">WNI</option>
-                                                    <option value="WNA">WNA</option>
-                                                </select>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="form-group">
-                                            <label class="col-sm-4 control-label">Nama Ayah</label>
-                                            <div class="col-sm-8">
-                                                <input type="text" name="fnama_ayah" class="form-control"
-                                                    style="text-transform: capitalize;" placeholder="Nama Ayah"
-                                                    required>
-                                            </div>
-                                        </div> -->
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">Foto Terkini</label>
                                             <div class="col-sm-8">

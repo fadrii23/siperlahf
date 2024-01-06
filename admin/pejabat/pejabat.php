@@ -1,6 +1,10 @@
 <?php 
   include ('../part/akses.php');
   include ('../part/header.php');
+  include('../../config/koneksi.php');
+
+  $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
 ?>
 
 <aside class="main-sidebar">
@@ -72,7 +76,6 @@
                                     </thead>
                                     <tbody>
                                         <?php
-              include ('../../config/koneksi.php');
   
               $no = 1;
               $qTampil = mysqli_query($connect, "SELECT * FROM tb_pejabat");

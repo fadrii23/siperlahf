@@ -30,7 +30,6 @@
     <link href="../../assets/css/bootstrap/style.css" rel="stylesheet">
 
     <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
     <link href="../../assets/css/style.css" rel="stylesheet">
 
     <!-- =======================================================
@@ -71,7 +70,7 @@
 
                                     <form class="row g-3 needs-validation" method="POST" action="register_guru.php">
                                         <div class="col-12">
-                                            <label for="yourName" class="form-label">Name</label>
+                                            <label for="yourName" class="form-label">Nama</label>
                                             <input type="text" name="name" class="form-control" id="yourName" required>
                                             <div class="invalid-feedback">Please, enter your name!</div>
                                         </div>
@@ -83,28 +82,105 @@
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourUsername" class="form-label">Gender</label>
-                                            <div class="input-group has-validation">
-                                                <span class="input-group-text" id="inputGroupPrepend">@</span>
-                                                <input type="text" name="username" class="form-control"
-                                                    id="yourUsername" required>
-                                                <div class="invalid-feedback">Please choose a username.</div>
+                                            <label for="yourUsername" class="form-label">Jenis Kelamin</label>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                    value="Laki-Laki" checked>
+                                                <label class="form-check-label" for="gender">
+                                                    Laki - Laki
+                                                </label>
+                                            </div>
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                    value="Perempuan">
+                                                <label class="form-check-label" for="gender">
+                                                    Perempuan
+                                                </label>
                                             </div>
                                         </div>
 
                                         <div class="col-12">
-                                            <label for="yourPosition" class="form-label">Position</label>
+                                            <label for="yourPosition" class="form-label">Jabatan</label>
                                             <input type="position" name="position" class="form-control"
                                                 id="yourPosition" required>
                                             <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Tanggal Lahir</label><br>
+                                            <input type="date" name="date_birth" class="form-control" id="yourDateBirth"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Tempat Lahir</label>
+                                            <input type="text" name="place" class="form-control" id="yourPlace"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Alamat</label>
+                                            <input type="text" name="address" class="form-control" id="address"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Email</label>
+                                            <input type="text" name="address" class="form-control" id="address"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Mata Pelajaran yang
+                                                diampu</label>
+                                            <input type="text" name="mapel" class="form-control" id="mapel" required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-8 control-label">Pendidikan Terakhir</label>
+                                            <div class="col-sm-12">
+                                                <select name="education" class="form-control" required>
+                                                    <option value="">-- Pendidikan Terakhir --</option>
+                                                    <option value="SD/SEDERAJAT">SD/SEDERAJAT</option>
+                                                    <option value="SLTP/SEDERAJAT">SLTP/SEDERAJAT</option>
+                                                    <option value="SLTA/SEDERAJAT">SLTA/SEDERAJAT</option>
+                                                    <option value="D1/SEDERAJAT">D1/SEDERAJAT</option>
+                                                    <option value="D2/SEDERAJAT">D2/SEDERAJAT</option>
+                                                    <option value="D3/SEDERAJAT">D3/SEDERAJAT</option>
+                                                    <option value="D4/SEDERAJAT">D4/SEDERAJAT</option>
+                                                    <option value="S1/SEDERAJAT">S1/SEDERAJAT</option>
+                                                    <option value="S2/SEDERAJAT">S2/SEDERAJAT</option>
+                                                    <option value="S3/SEDERAJAT">S3/SEDERAJAT</option>
+                                                    <option value="-">-</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Status</label>
+                                            <div class="col-sm-12">
+                                                <select name="status" class="form-control" required>
+                                                    <option value="">-- Status --</option>
+                                                    <option value="PNS">PNS</option>
+                                                    <option value="NON_PNS">NON PNS</option>
+                                                    <option value="-">-</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Tanggal Pertama
+                                                Bergabung</label>
+                                            <input type="date" name="date_birth" class="form-control" id="yourDateBirth"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Foto Terkini</label>
+                                            <div class="col-sm-8">
+                                                <input type="file" name="fphoto" class="form-control"
+                                                    style="text-transform: capitalize;" placeholder="Foto Terkini"
+                                                    required>
+                                            </div>
                                         </div>
 
-                                        <div class="col-12">
-                                            <label for="yourPassword" class="form-label">Position</label>
-                                            <input type="position" name="position" class="form-control"
-                                                id="yourPosition" required>
-                                            <div class="invalid-feedback">Please enter your position!</div>
-                                        </div>
 
                                         <div class="col-12">
                                             <div class="form-check">
@@ -121,7 +197,8 @@
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0">Already have an account? <a
-                                                    href="../login/login.php">Log in</a></p>
+                                                    href="../login/login.php">Log
+                                                    in</a></p>
                                         </div>
                                     </form>
 
