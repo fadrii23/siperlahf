@@ -17,6 +17,7 @@ $connect = $dbConnection->getConnection();
         <ol class="breadcrumb">
             <li><a href="../dashboard/"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
             <li class="active">Data Guru</li>
+            <li class="active">Tambah Data Guru</li>
         </ol>
     </section>
     <section class="content">
@@ -47,6 +48,11 @@ $connect = $dbConnection->getConnection();
                             <form class="form-horizontal" method="post" action="../guru/simpan-guru.php">
                                 <div class="col-md-6">
                                     <div class="box-body">
+                                        <div class="form-group">
+                                            <input type="hidden" name="id_user"
+                                                value="<?php echo $_SESSION['id_user']; ?>">
+                                        </div>
+
                                         <div class="form-group">
                                             <label class="col-sm-4 control-label">NIP</label>
                                             <div class="col-sm-8">

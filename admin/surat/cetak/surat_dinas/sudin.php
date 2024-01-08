@@ -5,19 +5,34 @@
     $connect = $dbConnection->getConnection();
 
     $id = $_GET['id'];
-$qCek = mysqli_query($connect, "SELECT tb_guru.name, tb_guru.position, tb_surat.no_surat, tb_surat.keperluan_surat, tb_surat.created_date_surat FROM tb_guru LEFT JOIN tb_surat ON tb_surat.nip = tb_guru.nip WHERE tb_surat.id_surat='$id'");
+
+    $qCek = mysqli_query($connect, "SELECT 
+        tb_guru.name AS name, 
+        tb_guru.position AS position, 
+        tb_surat.no_surat, 
+        tb_surat.keperluan_surat, 
+        tb_surat.created_date_surat, 
+        tb_pejabat.nama_pejabat, 
+        tb_pejabat.jabatan
+        FROM tb_surat 
+        LEFT JOIN tb_guru ON tb_surat.nip = tb_guru.nip 
+        LEFT JOIN tb_pejabat ON tb_surat.id_pejabat = tb_pejabat.id_pejabat
+        WHERE tb_surat.id_surat='$id'");
+    
 
 
-    while($row = mysqli_fetch_array($qCek)){
-        $qTampil = mysqli_query($connect, "SELECT * FROM tb_pejabat");
-        foreach($qTampil as $rows){
-            $id_pejabat = $row['id_pejabat'];
-            $qCekPejabat = mysqli_query($connect,"SELECT tb_pejabat.jabatan, tb_pejabat.nama_pejabat FROM tb_pejabat WHERE tb_pejabat.id_pejabat='$id_pejabat'");
-            while($rowss = mysqli_fetch_array($qCekPejabat)){
-                // ... (lakukan sesuatu dengan data $rowss jika diperlukan)
-            }
-        }
+    while ($data = mysqli_fetch_assoc($qCek)) {
+        $guruName = $data['name'];
+        $guruPosition = $data['position'];
+        $noSurat = $data['no_surat'];
+        $keperluanSurat = $data['keperluan_surat'];
+        $createdDateSurat = $data['created_date_surat'];
+        $namaPejabat = $data['nama_pejabat'];
+        $jabatanPejabat = $data['jabatan'];
+    
+        // Lakukan sesuatu dengan data yang sudah diambil
     }
+    
 ?>
 
 

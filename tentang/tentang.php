@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="../assets/img/mini-logo.png">
-    <title>e-SuratDesa</title>
+    <title>SIPERLAH</title>
     <link rel="stylesheet" href="../assets/fontawesome-5.10.2/css/all.css">
     <link rel="stylesheet" href="../assets/bootstrap-4.3.1/dist/css/bootstrap.min.css">
     <style type="text/css">
@@ -62,10 +62,11 @@
                                 SIPERLAH?</label>
                             <hr>
                         <blockquote>
-                            Web Aplikasi untuk pelayanan persuratan yang ada di <b>SMK TI MUHAMMADIYAH CIKAMPEK</b>
-                            untuk mempermudah guru dalam
-                            pengajuan
-                            surat-surat yang ada di sekolah
+                            SIPERLAH merupakan website final project buatan mahasiswa Universitas Buana Perjuangan
+                            Karawang yang diperuntukan sebagai sistem pembuatan surat-menyurat
+                            dengan menggunakan template yang ada dan dengan menggunakan Sistem Persuratan Sekolah ini
+                            dapat mempermudah para guru di <b>SMK TI MUHAMMADIYAH CIKAMPEK</b>
+                            dalam pengajuan surat-surat yang ada di sekolah.
                             <br>
                             <br>
                         </blockquote>

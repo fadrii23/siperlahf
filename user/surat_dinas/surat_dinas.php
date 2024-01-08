@@ -14,7 +14,8 @@ include ('../../admin/part/akses.php');
     <section class="content-header" style="padding-bottom:20px" ;>
         <h1>Buat Surat Dinas</h1>
         <ol class="breadcrumb">
-            <li><a href="#"><i class="fa fa-tachometer-alt"></i>Buat Surat</a></li>
+            <li><a href="../dashboard/"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
+            <li class="active">Buat Surat</li>
         </ol>
     </section>
     <div class="container" style="max-height:cover; padding-top:60px; position:relative; min-height: 100%;"

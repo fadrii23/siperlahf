@@ -17,7 +17,7 @@ $connect = $dbConnection->getConnection();
         <h1>Surat Selesai</h1>
         <ol class="breadcrumb">
             <li><a href="../user/user.php"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
-            <li class="active">Surat Selesai</li>
+            <li class="active">Riwayat Surat</li>
         </ol>
     </section>
     <section class="content">

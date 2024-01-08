@@ -17,6 +17,7 @@ $connect = $dbConnection->getConnection();
         <ol class="breadcrumb">
             <li><a href="../dashboard/"><i class="fa fa-tachometer-alt"></i> Dashboard</a></li>
             <li class="active">Data Pejabat</li>
+            <li class="active">Tambah Data Pejabat</li>
         </ol>
     </section>
     <section class="content">

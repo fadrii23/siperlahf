@@ -107,50 +107,6 @@ $connect = $dbConnection->getConnection();
             </div>
             <?php 
         } else if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'user')){
-      ?>
-            <div class="col-lg-1"></div>
-            <div class="col-lg-5 col-xs-6">
-                <div class="small-box bg-aqua">
-                    <div class="inner">
-                        <h3>
-                            <?php
-                include ('../../config/koneksi.php');
-
-                $qTampil = mysqli_query($connect, "SELECT * FROM penduduk");
-                $jumlahPenduduk = mysqli_num_rows($qTampil);
-                echo $jumlahPenduduk;
-              ?>
-                        </h3>
-                        <p>Data Penduduk</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-users" style="font-size:70px"></i>
-                    </div>
-                    <a href="../penduduk/" class="small-box-footer">Lihat detail <i
-                            class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-5 col-xs-6">
-                <div class="small-box bg-yellow">
-                    <div class="inner">
-                        <h3>
-                            <?php
-                $qTampil = mysqli_query($connect, "SELECT * FROM surat_keterangan WHERE status_surat='selesai' UNION SELECT * FROM surat_keterangan_berkelakuan_baik WHERE status_surat='selesai' UNION SELECT * FROM surat_keterangan_domisili WHERE status_surat='selesai' UNION SELECT * FROM surat_keterangan_usaha WHERE status_surat='selesai'");
-                $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
-                echo $jumlahPermintaanSurat;
-              ?>
-                        </h3>
-                        <p>Laporan Surat Administrasi Desa - Surat Keluar</p>
-                    </div>
-                    <div class="icon">
-                        <i class="fas fa-envelope" style="font-size:70px"></i>
-                    </div>
-                    <a href="../laporan/" class="small-box-footer">Lihat detail <i
-                            class="fa fa-arrow-circle-right"></i></a>
-                </div>
-            </div>
-            <div class="col-lg-1"></div>
-            <?php  
         }
       ?>
         </div>
@@ -214,7 +170,7 @@ $connect = $dbConnection->getConnection();
                                                         Sistem Persuratan Sekolah.</strong></a>
                                             </p>
                                         </div><br><br><br>
-                                        <div style="font-size: 10pt; font-weight: 500;">© <b>SIPERLAH</b> 2023.</div>
+
                                     </div>
                                 </div>
                             </form>

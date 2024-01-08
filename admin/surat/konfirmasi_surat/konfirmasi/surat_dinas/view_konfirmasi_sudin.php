@@ -17,7 +17,7 @@ while($row = mysqli_fetch_array($qCek)) {
 
 <aside class="main-sidebar">
     <?php
-    include ('../part/sidebar.php')
+    include ('../../../../part/sidebar.php')
     ?>
 </aside>
 <div class="content-wrapper">
