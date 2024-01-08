@@ -1,6 +1,10 @@
 <?php
   include ('../../admin/part/akses.php');
 	include ('../../admin/part/header.php');
+    include ('../../config/koneksi.php');
+   
+    $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+    $connect = $dbConnection->getConnection();
 ?>
 
 <aside class="main-sidebar">
@@ -46,16 +50,6 @@
                     <div class="inner">
                         <h3>
                             <?php
-                // $qTampil = mysqli_query($connect, "SELECT tanggal_surat FROM surat_keterangan WHERE status_surat='pending' 
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_berkelakuan_baik WHERE status_surat='pending' 
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_domisili WHERE status_surat='pending'
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_kepemilikan_kendaraan_bermotor WHERE status_surat='pending'
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_perhiasan WHERE status_surat='pending'
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_usaha WHERE status_surat='pending'
-                //   UNION SELECT tanggal_surat FROM surat_lapor_hajatan WHERE status_surat='pending'
-                //   UNION SELECT tanggal_surat FROM surat_pengantar_skck WHERE status_surat='pending'");
-                // $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
-                // echo $jumlahPermintaanSurat;
                 $qTampil = mysqli_query($connect, "SELECT created_date_sudin FROM tb_sudin WHERE status_sudin='pending'");
                 $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
                 echo $jumlahPermintaanSurat;
@@ -75,16 +69,6 @@
                     <div class="inner">
                         <h3>
                             <?php
-                // $qTampil = mysqli_query($connect, "SELECT tanggal_surat FROM surat_keterangan WHERE status_surat='selesai' 
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_berkelakuan_baik WHERE status_surat='selesai' 
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_domisili WHERE status_surat='selesai'
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_kepemilikan_kendaraan_bermotor WHERE status_surat='selesai'
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_perhiasan WHERE status_surat='selesai'
-                //   UNION SELECT tanggal_surat FROM surat_keterangan_usaha WHERE status_surat='selesai'
-                //   UNION SELECT tanggal_surat FROM surat_lapor_hajatan WHERE status_surat='selesai'
-                //   UNION SELECT tanggal_surat FROM surat_pengantar_skck WHERE status_surat='selesai'");
-                // $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
-                // echo $jumlahPermintaanSurat;
                 $qTampil = mysqli_query($connect, "SELECT created_date_sudin FROM tb_sudin WHERE status_sudin='pending'");
                 $jumlahPermintaanSurat = mysqli_num_rows($qTampil);
                 echo $jumlahPermintaanSurat;
@@ -108,7 +92,6 @@
                     <div class="inner">
                         <h3>
                             <?php
-                include ('../../config/koneksi.php');
 
                 $qTampil = mysqli_query($connect, "SELECT * FROM penduduk");
                 $jumlahPenduduk = mysqli_num_rows($qTampil);
@@ -167,16 +150,6 @@
                                     <div class="col-md-4" style="text-align: center;">
                                         <img style="max-width:300px; width:100%; height:auto;"
                                             src="../../assets/img/logo_sekolah.png"><br>
-                                        <?php  
-                    //   $qTampilDesa = mysqli_query($connect, "SELECT * FROM profil_desa WHERE id_profil_desa = '1'");
-                    //   foreach($qTampilDesa as $row){
-                    // ?>
-                                        <!-- <p style="font-size: 20pt; font-weight: 500; text-transform: uppercase;">
-                                            <strong>DESA <?php echo $row['nama_desa']; ?></strong>
-                                            <hr> -->
-                                        <?php  
-                    //   }
-                    ?>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="pull-right">

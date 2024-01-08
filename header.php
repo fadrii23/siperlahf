@@ -25,8 +25,10 @@
     <!-- Font Awesome v5.8.2 -->
     <link rel="stylesheet" href="../../assets/fontawesome-5.10.2/css/all.css">
     <!-- CSS DataTable -->
-    <link rel="stylesheet" href="../../assets/datatables-1.10.12/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="../../assets/datatables-1.10.12/css/dataTables.bootstrap.min.css" />
+    <link
+        href="https://cdn.datatables.net/v/bs/jszip-3.10.1/dt-1.13.8/b-2.4.2/b-html5-2.4.2/b-print-2.4.2/fh-3.4.0/r-2.5.0/datatables.min.css"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="../../assets/datatables-1.10.12/css/dataTables.bootstrap.min.css" /> -->
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">

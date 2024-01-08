@@ -85,8 +85,9 @@ $connect = $dbConnection->getConnection();
             ?>
                                         <tr>
                                             <td><?php echo $no++; ?></td>
-                                            <td><?php echo $row['nip']; ?></td>
-                                            <td style=" text-transform: capitalize;"><?php echo $row['nama']; ?></td>
+                                            <td><?php echo $row['nip_pejabat']; ?></td>
+                                            <td style=" text-transform: capitalize;"><?php echo $row['nama_pejabat']; ?>
+                                            </td>
                                             <td style="text-transform: capitalize;"><?php echo $row['jabatan']; ?></td>
                                             <?php
                 $tanggal = date('d', strtotime($row['awal_menjabat']));
@@ -109,7 +110,7 @@ $connect = $dbConnection->getConnection();
               ?>
                                             <td style="text-transform: capitalize;">
                                                 <?php echo  "" . $tanggal . " " . $bulanIndo[$bulan] . " " . $tahun; ?>
-                                            <td><a href="<?=$row['foto'];?>" target="_blank">unduh</a></td>
+                                            <td><a href="<?=$row['foto_pejabat'];?>" target="_blank">unduh</a></td>
 
                                             <?php 
                 if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Administrator')){

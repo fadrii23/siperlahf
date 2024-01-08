@@ -5,9 +5,14 @@
   $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
 $connect = $dbConnection->getConnection();
 
-  $id = $_GET['id'];
-  $qCek = mysqli_query($connect,"SELECT tb_pejabat.*, tb_surat.*, tb_ FROM tb_pejabat LEFT JOIN tb_surat ON tb_surat.nip = tb_pejabat.nip WHERE tb_surat.id_surat='$id'");
-  while($row = mysqli_fetch_array($qCek)){
+$id = $_GET['id'];
+$qCek = mysqli_query($connect,"SELECT tb_guru.*, tb_surat.* FROM tb_guru LEFT JOIN tb_surat ON tb_surat.nip = tb_guru.nip WHERE tb_surat.id_surat='$id'");
+
+if (!$qCek) {
+    die('Query Error: ' . mysqli_error($connect));
+}
+
+while($row = mysqli_fetch_array($qCek)) {
 ?>
 
 <aside class="main-sidebar">
@@ -49,26 +54,16 @@ $connect = $dbConnection->getConnection();
                                                     <option value="-- Pilih Tanda Tangan --">-- Pilih Tanda Tangan --
                                                     </option>
                                                     <?php
-                            $selectedPosition  = $row['position'];
-                            $qTampilPosition   = "SELECT * FROM tb_pejabat";
-                            $tampilPosition  = mysqli_query($connect, $qTampilPosition);
-                            while($rows = mysqli_fetch_assoc($tampilPosition) ){
-                              if($rows['position'] == $selectedPosition){
-                          ?>
+                                                    $selectedPosition  = $row['jabatan'];
+                                                    $qTampilPosition   = "SELECT * FROM tb_pejabat";
+                                                    $tampilPosition  = mysqli_query($connect, $qTampilPosition);
+                                                    while($rows = mysqli_fetch_assoc($tampilPosition) ){
+                                                    ?>
                                                     <option value="<?php echo $rows['id_pejabat']; ?>"
                                                         selected="selected">
-                                                        <?php echo $rows['position']; ?></option>
-                                                    <?php
-                              }else{
-                          ?>
-                                                    <option value="<?php echo $rows['id_pejabat']; ?>">
-                                                        <?php echo $rows['position'], " (", $rows['nama'], ")"; ?>
+                                                        <?= $rows['jabatan']; ?>
                                                     </option>
-
-                                                    <?php 
-                              } 
-                            }
-                          ?>
+                                                    <?php } ?>
                                                 </select>
                                             </div>
                                         </div>
@@ -122,14 +117,7 @@ $connect = $dbConnection->getConnection();
                     //       'December' => 'Desember'
                     //   );
                     ?>
-                                        <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">Tempat, Tgl Lahir</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="ft_lahir" style="text-transform: capitalize;"
-                                                    value="<?php echo $row['tempat_lahir'] . ", " . $tgl . $blnIndo[$bln] . $thn; ?>"
-                                                    class="form-control" readonly>
-                                            </div>
-                                        </div> -->
+
                                         <div class="form-group">
                                             <label class="col-sm-3 control-label">NIP</label>
                                             <div class="col-sm-9">
@@ -145,65 +133,13 @@ $connect = $dbConnection->getConnection();
                                                     readonly>
                                             </div>
                                         </div>
-
-                                        <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">Keperluan Surat</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="fkeperluan_surat"
-                                                    style="text-transform: capitalize;"
-                                                    value="<?php echo $row['keperluan_surat']; ?>" class="form-control"
-                                                    readonly>
-                                            </div>
-                                        </div> -->
-                                        <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">Alamat</label>
-                                            <div class="col-sm-9">
-                                                <textarea rows="3" name="falamat" class="form-control"
-                                                    style="text-transform: capitalize;"
-                                                    readonly><?php echo $row['jalan'] . ", RT" . $row['rt'] . "/RW" . $row['rw'] . ", Dusun " . $row['dusun'] . ", Desa " . $row['desa'] . ", Kecamatan " . $row['kecamatan'] . ", " . $row['kota']; ?></textarea>
-                                            </div>
-                                        </div> -->
                                         <div>
                                             <input type="hidden" name="id" value="<?php echo $row['id_surat']; ?>"
                                                 class="form-control">
                                         </div>
                                     </div>
                                 </div>
-                                <!-- <div class="col-md-6"> -->
-                                <!-- <div class="box-body"> -->
-                                <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">Jenis Kelamin</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="fj_kelamin"
-                                                    value="<?php echo $row['jenis_kelamin']; ?>" class="form-control"
-                                                    readonly>
-                                            </div>
-                                        </div> -->
-                                <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">Agama</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="fagama" style="text-transform: capitalize;"
-                                                    value="<?php echo $row['agama']; ?>" class="form-control" readonly>
-                                            </div>
-                                        </div> -->
-                                <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">NIK</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="fnik" value="<?php echo $row['nik']; ?>"
-                                                    class="form-control" readonly>
-                                            </div>
-                                        </div> -->
-                                <!-- <div class="form-group">
-                                            <label class="col-sm-3 control-label">Kewarganegaraan</label>
-                                            <div class="col-sm-9">
-                                                <input type="text" name="fkewarganegaraan"
-                                                    style="text-transform: uppercase;"
-                                                    value="<?php echo $row['kewarganegaraan']; ?>" class="form-control"
-                                                    readonly>
-                                            </div>
-                                        </div> -->
-                                <!-- </div> -->
-                                <!-- </div> -->
+
                             </div>
                             <h5 class="box-title pull-right" style="color: #696969;"><i class="fas fa-info-circle"></i>
                                 <b>Informasi Surat</b>

@@ -63,18 +63,14 @@
                             <div class="card mb-3">
 
                                 <div class="card-body">
-
+                                    <!-- Membuat Akun -->
                                     <div class="pt-4 pb-2">
                                         <h5 class="card-title text-center pb-0 fs-4">Create an Account</h5>
                                         <p class="text-center small">Enter your personal details to create account</p>
                                     </div>
 
                                     <form class="row g-3 needs-validation" method="POST" action="tambah_user.php">
-                                        <div class="col-12">
-                                            <label for="yourName" class="form-label">Name</label>
-                                            <input type="text" name="name" class="form-control" id="yourName" required>
-                                            <div class="invalid-feedback">Please, enter your name!</div>
-                                        </div>
+
 
                                         <div class="col-12">
                                             <label for="yourEmail" class="form-label">Email</label>
@@ -99,6 +95,121 @@
                                                 id="yourPassword" required>
                                             <div class="invalid-feedback">Please enter your password!</div>
                                         </div>
+                                        <!-- Mengisis Data Diri
+                                     -->
+                                        <div class="pt-4 pb-2">
+                                            <h5 class="card-title text-center pb-0 fs-4">Fill your Identity</h5>
+                                            <p class="text-center small">Enter your personal details to create account
+                                            </p>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourName" class="form-label">Name</label>
+                                            <input type="text" name="name" class="form-control" id="yourName" required>
+                                            <div class="invalid-feedback">Please, enter your name!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourNIP" class="form-label">NIP</label>
+                                            <div class="input-group has-validation">
+                                                <input type="text" name="nip" class="form-control" id="yournip"
+                                                    required>
+                                            </div>
+                                        </div>
+                                        <label for="yourUsername" class="form-label">Gender</label>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="Laki-Laki" checked>
+                                            <label class="form-check-label" for="gender">
+                                                Laki - Laki
+                                            </label>
+                                        </div>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="gender" id="gender"
+                                                value="Perempuan">
+                                            <label class="form-check-label" for="gender">
+                                                Perempuan
+                                            </label>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Jabatan</label>
+                                            <input type="position" name="position" class="form-control"
+                                                id="yourPosition" required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourDateBirth" class="form-label">Tanggal Lahir</label><br>
+                                            <input type="date" name="date_birth" class="form-control" id="yourDateBirth"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPlace" class="form-label">Tempat Lahir</label>
+                                            <input type="text" name="place" class="form-control" id="yourPlace"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourAddress" class="form-label">Alamat</label>
+                                            <input type="text" name="address" class="form-control" id="address"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourReligion" class="form-label">Religion</label>
+                                            <input type="text" name="religion" class="form-control" id="religion"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourMapel" class="form-label">Mata Pelajaran yang
+                                                diampu</label>
+                                            <input type="text" name="mapel" class="form-control" id="mapel" required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-8 control-label">Pendidikan Terakhir</label>
+                                            <div class="col-sm-12">
+                                                <select name="education" class="form-control" required>
+                                                    <option value="">-- Pendidikan Terakhir --</option>
+                                                    <option value="SD/SEDERAJAT">SD/SEDERAJAT</option>
+                                                    <option value="SLTP/SEDERAJAT">SLTP/SEDERAJAT</option>
+                                                    <option value="SLTA/SEDERAJAT">SLTA/SEDERAJAT</option>
+                                                    <option value="D1/SEDERAJAT">D1/SEDERAJAT</option>
+                                                    <option value="D2/SEDERAJAT">D2/SEDERAJAT</option>
+                                                    <option value="D3/SEDERAJAT">D3/SEDERAJAT</option>
+                                                    <option value="D4/SEDERAJAT">D4/SEDERAJAT</option>
+                                                    <option value="S1/SEDERAJAT">S1/SEDERAJAT</option>
+                                                    <option value="S2/SEDERAJAT">S2/SEDERAJAT</option>
+                                                    <option value="S3/SEDERAJAT">S3/SEDERAJAT</option>
+                                                    <option value="-">-</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Status</label>
+                                            <div class="col-sm-12">
+                                                <select name="status" class="form-control" required>
+                                                    <option value="">-- Status --</option>
+                                                    <option value="PNS">PNS</option>
+                                                    <option value="NON_PNS">NON PNS</option>
+                                                    <option value="-">-</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-12">
+                                            <label for="yourPosition" class="form-label">Tanggal Pertama
+                                                Bergabung</label>
+                                            <input type="date" name="join_date" class="form-control" id="yourDateBirth"
+                                                required>
+                                            <div class="invalid-feedback">Please enter your position!</div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-sm-4 control-label">Foto Terkini</label>
+                                            <div class="col-sm-8">
+                                                <input type="file" name="photo" class="form-control"
+                                                    style="text-transform: capitalize;" placeholder="Foto Terkini"
+                                                    required>
+                                            </div>
+                                        </div>
 
                                         <div class="col-12">
                                             <div class="form-check">
@@ -115,7 +226,8 @@
                                         </div>
                                         <div class="col-12">
                                             <p class="small mb-0">Already have an account? <a
-                                                    href="../login/login.php">Log in</a></p>
+                                                    href="../../login/login.php">Log
+                                                    in</a></p>
                                         </div>
                                     </form>
 

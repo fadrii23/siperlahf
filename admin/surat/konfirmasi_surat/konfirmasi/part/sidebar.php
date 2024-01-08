@@ -26,53 +26,73 @@
         </div>
         <ul class="sidebar-menu" data-widget="tree">
             <li class="header">MAIN NAVIGATION</li>
-            <li class="add">
-                <a href="../../../mail.php">
+            <!-- <li class="add">
+                <a href="../surat/mail.php">
                     <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Buat Surat</span>
                 </a>
-            </li>
-            <li class="active">
-                <a href="../../../../dashboard/dashboard.php">
-                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Dashboard</span>
-                </a>
-            </li>
-            <li class="teacher">
-                <a href="../../../../guru/guru.php">
-                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Data Guru</span>
-                </a>
-            </li>
+            </li> -->
+
 
 
             <?php
         if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'Administrator')){
       ?>
-            <li class="treeview">
-                <a href="#">
-                    <i class="fas fa-envelope-open-text"></i> <span>&nbsp;&nbsp;Surat</span>
-                    <span class="pull-right-container">
-                        <i class="fa fa-angle-left pull-right"></i>
-                    </span>
+            <li class="active">
+                <a href="../dashboard/dashboard.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Dashboard</span>
                 </a>
-                <ul class="treeview-menu">
-                    <li>
-                        <a href="../../../permintaan.php"><i class="fa fa-circle-notch"></i> Permintaan
-                            Surat</a>
-                    </li>
-                    <li>
-                        <a href="../../../surat_selesai/index.php"><i class="fa fa-circle-notch"></i> Surat Selesai</a>
-                    </li>
-                </ul>
             </li>
-            <?php 
-        }else{
-          
-        }
-      ?>
+            <li class="teacher">
+                <a href="../guru/guru.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Data Guru</span>
+                </a>
+            </li>
+            <li class="teacher">
+                <a href="../pejabat/pejabat.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Data Pejabat</span>
+                </a>
+            </li>
+            <li class="take">
+                <a href="../surat/permintaan.php">
+                    <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Permintaan Surat</span>
+                </a>
+            </li>
+
             <li>
-                <a href="../../../../laporan/laporan.php"><i class="fas fa-chart-line"></i>
-                    <span>&nbsp;&nbsp;Laporan</span></a>
+                <a href="../surat/selesai.php"><i class="fa fa-circle-notch"></i> Surat Selesai</a>
+            </li>
+            <li>
+                <a href="../laporan/laporan.php"><i class="fas fa-chart-line"></i> <span>&nbsp;&nbsp;Laporan</span></a>
             </li>
         </ul>
+
+        <?php 
+
+        }
+      ?>
+
+        <?php 
+        if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'user')) {
+      ?>
+        <li class="add">
+            <a href="../mail/mail.php">
+                <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Buat Surat</span>
+            </a>
+        </li>
+        <li class="upload">
+            <a href="../../user/upload_surat/upload.php">
+                <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Upload Surat</span>
+            </a>
+        </li>
+        <li class="riwayat">
+            <a href="../../user/riwayat_surat/riwayat.php">
+                <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Riwayat Surat</span>
+            </a>
+        </li>
+        <?php 
+
+        }
+      ?>
     </section>
 </body>
 

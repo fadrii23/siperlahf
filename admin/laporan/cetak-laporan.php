@@ -23,6 +23,9 @@
 <body>
     <?php
     include "../../config/koneksi.php";
+       
+$dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+$connect = $dbConnection->getConnection();
     if(isset($_GET['filter']) && ! empty($_GET['filter'])){
       $filter = $_GET['filter'];
       if($filter == '1'){

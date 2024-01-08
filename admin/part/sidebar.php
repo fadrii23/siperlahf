@@ -74,6 +74,7 @@
         <?php 
         if(isset($_SESSION['lvl']) && ($_SESSION['lvl'] == 'user')) {
       ?>
+
         <li class="add">
             <a href="../mail/mail.php">
                 <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Buat Surat</span>
@@ -87,6 +88,11 @@
         <li class="riwayat">
             <a href="../../user/riwayat_surat/riwayat.php">
                 <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Riwayat Surat</span>
+            </a>
+        </li>
+        <li class="add">
+            <a href="../../user/data_diri/data_diri.php">
+                <i class="fas fa-tachometer-alt"></i> <span>&nbsp;&nbsp;Data Diri</span>
             </a>
         </li>
         <?php 

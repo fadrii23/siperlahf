@@ -1,22 +1,25 @@
 <?php 
-	include ('../../../part/akses.php');
-  	include ('../../../../config/koneksi.php');
-      $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
-      $connect = $dbConnection->getConnection();
+    include ('../../../part/akses.php');
+    include ('../../../../config/koneksi.php');
+    $dbConnection = new DatabaseConnection("localhost", "root", "", "siperlah_db");
+    $connect = $dbConnection->getConnection();
 
-  	$id = $_GET['id'];
-  	$id = $_GET['id'];
-      $qCek = mysqli_query($connect, "SELECT tb_guru.name, tb_guru.position, tb_surat.*, tb_pejabat.* FROM tb_guru LEFT JOIN tb_surat ON tb_surat.nip = tb_guru.nip LEFT JOIN tb_pejabat ON tb_surat.nip = tb_pejabat.nip WHERE tb_surat.id_surat='$id'");
+    $id = $_GET['id'];
+$qCek = mysqli_query($connect, "SELECT tb_guru.name, tb_guru.position, tb_surat.no_surat, tb_surat.keperluan_surat, tb_surat.created_date_surat FROM tb_guru LEFT JOIN tb_surat ON tb_surat.nip = tb_guru.nip WHERE tb_surat.id_surat='$id'");
 
-  	while($row = mysqli_fetch_array($qCek)){
 
-        // $qTampilDesa = mysqli_query($connect, "SELECT * FROM profil_desa WHERE id_profil_desa = '1'");
-        // foreach($qTampilDesa as $rows){
-
-		// 	$id_pejabat_desa = $row['id_pejabat_desa'];
-		//   	$qCekPejabatDesa = mysqli_query($connect,"SELECT pejabat_desa.jabatan, pejabat_desa.nama_pejabat_desa FROM pejabat_desa LEFT JOIN surat_keterangan ON surat_keterangan.id_pejabat_desa = pejabat_desa.id_pejabat_desa WHERE surat_keterangan.id_pejabat_desa = '$id_pejabat_desa' AND surat_keterangan.id_sk='$id'");
-		//   	while($rowss = mysqli_fetch_array($qCekPejabatDesa)){
+    while($row = mysqli_fetch_array($qCek)){
+        $qTampil = mysqli_query($connect, "SELECT * FROM tb_pejabat");
+        foreach($qTampil as $rows){
+            $id_pejabat = $row['id_pejabat'];
+            $qCekPejabat = mysqli_query($connect,"SELECT tb_pejabat.jabatan, tb_pejabat.nama_pejabat FROM tb_pejabat WHERE tb_pejabat.id_pejabat='$id_pejabat'");
+            while($rowss = mysqli_fetch_array($qCekPejabat)){
+                // ... (lakukan sesuatu dengan data $rowss jika diperlukan)
+            }
+        }
+    }
 ?>
+
 
 <html>
 
@@ -52,12 +55,6 @@
                 </div>
             </div>
             <br>
-            <!-- <div align="center"><u>
-                    <h4 class="kop">SURAT DINAS</h4>
-                </u></div>
-            <div align="center">
-                <h4 class="kop3">Nomor :&nbsp;&nbsp;&nbsp;<?php echo $row['no_surat']; ?></h4>
-            </div> -->
         </table>
         <br>
         <div class="clear"></div>
@@ -264,9 +261,3 @@
 </body>
 
 </html>
-
-<?php
-			}
-	// 	}
-  	// }
-?>

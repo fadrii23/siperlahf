@@ -47,7 +47,7 @@ $connect = $dbConnection->getConnection();
                                             <div class="col-sm-8">
                                                 <input type="text" name="fnip" maxlength="16"
                                                     onkeypress="return hanyaAngka(event)" class="form-control"
-                                                    value="<?php echo $row['nip']; ?>" required>
+                                                    value="<?php echo $row['nip_pejabat']; ?>" required>
                                                 <script>
                                                 function hanyaAngka(evt) {
                                                     var charCode = (evt.which) ? evt.which : event.keyCode
@@ -63,7 +63,7 @@ $connect = $dbConnection->getConnection();
                                             <div class="col-sm-8">
                                                 <input type="text" name="fnama" class="form-control"
                                                     style="text-transform: capitalize;" placeholder="Nama"
-                                                    value="<?php echo $row['nama']; ?>" required>
+                                                    value="<?php echo $row['nama_pejabat']; ?>" required>
                                             </div>
                                         </div>
                                         <div class="form-group">

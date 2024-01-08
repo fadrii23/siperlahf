@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" href="assets/img/mini-logo.png">
-    <title>e-SuratDesa</title>
+    <title>SIPERLAH</title>
     <link rel="stylesheet" href="assets/fontawesome-5.10.2/css/all.css">
     <link rel="stylesheet" href="assets/bootstrap-4.3.1/dist/css/bootstrap.min.css">
     <style type="text/css">
@@ -59,19 +59,6 @@
         <img src="assets/img/logo_sekolah.png" style="width:300px">
         <hr>
         <a class="text-light" style="font-size:18pt"><strong>WEB APLIKASI PERSURATAN SEKOLAH</strong></a><br>
-
-        <!-- <?php  
-		//include('config/koneksi.php');
-
-        //$qTampilDesa = mysqli_query($connect, "SELECT * FROM profil_desa WHERE id_profil_desa = '1'");
-        //foreach($qTampilDesa as $row){
-    	?>
-        <a class="text-light" style="font-size:15pt; text-transform: uppercase;"><strong>DESA
-                <?php echo $row['nama_desa']; ?></strong><br>
-            <a class="text-light"
-                style="font-size:15pt; text-transform: uppercase;"><strong><?php echo $row['kota']; ?></strong></a>
-            <hr>
-         -->
         <br>
         <a href="login/login.php" class="btn btn-outline-light"
             style="font-size:15pt; background-color:blue; color:black"> LOGIN

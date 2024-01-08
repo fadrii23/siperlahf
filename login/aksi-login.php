@@ -24,12 +24,12 @@ class UserLogin extends DatabaseConnection {
                 header("Location: ../user/user/user.php");
             }
         } else {
-            echo "gagal masuk lagi";
+            echo "<script>alert('Nama pengguna atau kata sandi salah'); window.location.href='login.php';</script>";
         }
     }
 }
 
-// Usage
+// Penggunaan
 $database = new UserLogin("localhost", "root", "", "siperlah_db");
 
 $username = $_POST['username'];

@@ -80,7 +80,7 @@ $connect = $dbConnection->getConnection();
                           if($row['jenis_surat']=="Surat Dinas"){
                         ?>
                                 <a class="btn btn-success btn-sm"
-                                    href='../surat/konfirmasi_surat/konfirmasi/surat_dinas/sudin_konfirmasi.php?id=<?php echo $row['id_surat']; ?>'><i
+                                    href='../surat/konfirmasi_surat/konfirmasi/surat_dinas/view_konfirmasi_sudin.php?id=<?php echo $row['id_surat']; ?>'><i
                                         class="fa fa-check"></i><b> KONFIRMASI</b></a>
                                 <?php
                           } else if($row['jenis_surat']=="Surat Undangan"){

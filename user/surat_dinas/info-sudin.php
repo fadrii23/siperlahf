@@ -13,6 +13,7 @@
 		$data = mysqli_fetch_assoc($qCekNip);
 		if($data['nip']==$nip){
 			$_SESSION['nip'] = $nip;
+            $_SESSION['id_user'] = $data['id_user'];
 ?>
 <aside class="main-sidebar">
     <?php
@@ -54,6 +55,7 @@
                                     readonly>
                             </div>
                         </div>
+                        <input type="hidden" name="id_user" value="<?php echo $_SESSION['id_user']; ?>">
                         <div class="form-group">
                             <label class="col-sm-12" style="font-weight: 500;">Nama Lengkap</label>
                             <div class="col-sm-12">
@@ -77,74 +79,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="col-sm-12" style="font-weight: 500;">Tanggal Lahir</label>
-                            <div class="col-sm-12">
-                                <input type="text" name="fplace" class="form-control"
-                                    style="text-transform: capitalize;" value="<?php echo $data['date_birth']; ?>" readonly<?php
-										// 	$tgl_lhr = date($data['date_birth']);
-										// 	$tgl = date('d ', strtotime($date_birth));
-										// 	$bln = date('m', strtotime($date_birth));
-										// 	$thn = date(' Y', strtotime($date_birth));
-										// 	$blnIndo = array(
-										// 	    'January' => 'Januari',
-										// 	    'February' => 'Februari',
-										// 	    'March' => 'Maret',
-										// 	    'April' => 'April',
-										// 	    'May' => 'Mei',
-										// 	    'June' => 'Juni',
-										// 	    'July' => 'Juli',
-										// 	    'August' => 'Agustus',
-										// 	    'September' => 'September',
-										// 	    'October' => 'Oktober',
-										// 	    'November' => 'November',
-										// 	    'December' => 'Desember'
-										// 	);
-										// ?> </div>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="col-sm-12" style="font-weight: 500;">Tempat Lahir</label>
-                            <div class="col-sm-12">
-                                <input type="text" name="fplace" class="form-control"
-                                    style="text-transform: capitalize;" value="<?php echo $data['place']; ?>" readonly>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="col-sm-12" style="font-weight: 500;">Agama</label>
-                            <div class="col-sm-12">
-                                <input type="text" name="freligion" class="form-control"
-                                    style="text-transform: capitalize;" value="<?php echo $data['religion']; ?>"
-                                    readonly>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="row"> -->
-                    <!-- <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="col-sm-12" style="font-weight: 500;">Jabatan</label>
-                            <div class="col-sm-12">
-                                <input type="text" name="fposition" class="form-control"
-                                    style="text-transform: capitalize;" value="<?php echo $data['position']; ?>"
-                                    readonly>
-                            </div>
-                        </div>
-                    </div> -->
-                    <!-- <div class="col-sm-6">
-                        <div class="form-group">
-                            <label class="col-sm-12" style="font-weight: 500;">Alamat</label>
-                            <div class="col-sm-12">
-                                <textarea type="text" name="faddress" class="form-control"
-                                    style="text-transform: capitalize;"
-                                    readonly><?php echo $data['address'] ?></textarea>
-                            </div>
-                        </div>
-                    </div> -->
                 </div>
                 <br>
                 <h5 class="card-header"><i class="fas fa-envelope"></i> KEPERLUAN SURAT</h5>

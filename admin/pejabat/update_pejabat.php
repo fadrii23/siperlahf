@@ -8,7 +8,7 @@ class PejabatUpdate extends DatabaseConnection {
     }
 
     public function updatePejabat($id, $nip, $nama, $jabatan, $awal_menjabat, $foto) {
-        $query = "UPDATE tb_pejabat SET nip = '$nip', nama = '$nama', jabatan = '$jabatan', awal_menjabat = '$awal_menjabat', foto = '/upload/$foto' WHERE id_pejabat='$id'";
+        $query = "UPDATE tb_pejabat SET nip_pejabat = '$nip', nama_pejabat = '$nama', jabatan = '$jabatan', awal_menjabat = '$awal_menjabat', foto_pejabat = '/upload/$foto' WHERE id_pejabat='$id'";
         
         if (mysqli_query($this->getConnection(), $query)) {
             header("Location:pejabat.php");

@@ -6,6 +6,7 @@
 $connect = $dbConnection->getConnection();
 ?>
 
+
 <aside class="main-sidebar">
     <?php
     include ('../../admin/part/sidebar.php')
@@ -42,7 +43,7 @@ $connect = $dbConnection->getConnection();
                         <?php
 
               $no = 1;
-                 $qTampil = mysqli_query($connect, "SELECT * FROM tb_surat");
+                 $qTampil = mysqli_query($connect, "SELECT * FROM tb_surat" );
               foreach($qTampil as $row){
             ?>
                         <tr>
